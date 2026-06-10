@@ -1,6 +1,16 @@
-# 🏞️ National Parks Explorer
+# National Parks Explorer - Extended By Jahidul Arafat
 ### Assignment 4 — Remote Data & APIs
-### COMP 6910 — Mobile Applications Development
+### COMP 6970 — Mobile Applications Development
+
+---
+
+[![🏞️ Flutter CI](https://github.com/COMP6970-MobileAppDev-Summer2026-AU/Assignment_4/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/COMP6970-MobileAppDev-Summer2026-AU/Assignment_4/actions/workflows/flutter_ci.yml)
+[![🔎 PR Check](https://github.com/COMP6970-MobileAppDev-Summer2026-AU/Assignment_4/actions/workflows/pr_check.yml/badge.svg)](https://github.com/COMP6970-MobileAppDev-Summer2026-AU/Assignment_4/actions/workflows/pr_check.yml)
+![Flutter](https://img.shields.io/badge/Flutter-3.44.0-02569B?logo=flutter)
+![Dart](https://img.shields.io/badge/Dart-3.0+-0175C2?logo=dart)
+![Tests](https://img.shields.io/badge/Tests-51%20passing-brightgreen?logo=checkmarx)
+![API](https://img.shields.io/badge/API-NPS%20Developer-4CAF50?logo=leaf)
+![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20Android-lightgrey?logo=apple)
 
 ---
 
@@ -510,69 +520,6 @@ Map<String, dynamic> _fullParkJson()      // All fields + 1 image, 2 activities,
 
 // Null park — every field explicitly null
 Map<String, dynamic> _nullFieldsParkJson() // Verifies fromJson never crashes on null API response
-```
-
----
-
-## 🔁 CI/CD — GitHub Actions
-
-Add these workflows to `.github/workflows/` for automated checks on every push:
-
-### `flutter_ci.yml`
-
-```yaml
-name: 🏞️ National Parks — Flutter CI
-
-on:
-  push:
-    branches: [main, master, develop]
-  pull_request:
-    branches: [main, master]
-
-env:
-  FLUTTER_VERSION: '3.44.0'
-
-jobs:
-  analyze:
-    name: 🔍 Static Analysis
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: stable
-          cache: true
-      - run: flutter pub get
-      - run: flutter analyze
-
-  test:
-    name: 🧪 Tests (51)
-    runs-on: ubuntu-latest
-    needs: analyze
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: stable
-          cache: true
-      - run: flutter pub get
-      - run: flutter test --reporter expanded
-
-  build-ios:
-    name: 🍎 Build iOS
-    runs-on: macos-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: stable
-          cache: true
-      - run: flutter pub get
-      - run: flutter build ios --release --no-codesign
 ```
 
 ---
