@@ -14,12 +14,13 @@
 
 ---
 
-## 🎬 App Demo
+## 🎬 App Demo Video
 
-> *Add your YouTube demo link here after recording*
+[![National Parks Explorer — App Demo](https://img.youtube.com/vi/wuk2r05u_LE/maxresdefault.jpg)](https://youtu.be/wuk2r05u_LE)
+
+> **▶️ [Watch Full Demo on YouTube](https://youtu.be/wuk2r05u_LE)**
 >
-> Complete walkthrough: Home → Search → Grid/List/Compact Results → Detail (Overview · Activities · Hours & Fees · Map) → Get Directions
-
+> Complete walkthrough: Home → Search by State → Grid/List/Compact Results → Park Detail (Overview · Activities · Hours & Fees · Map + Directions)
 ---
 
 ## 👨‍💻 Developer Information
